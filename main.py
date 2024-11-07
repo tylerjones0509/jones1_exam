@@ -1,8 +1,8 @@
 from flask import Flask, render_template
 import os
 
-# Define the path to the templates folder inside the 'App' folder
-template_folder = os.path.join(os.getcwd(), 'App', 'templates')
+# Define the path to the templates folder inside the 'app' folder
+template_folder = os.path.join(os.getcwd(), 'app', 'templates')
 
 # Initialize the Flask app and specify the custom template folder
 app = Flask(__name__, template_folder=template_folder)
