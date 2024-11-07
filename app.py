@@ -1,6 +1,11 @@
 from flask import Flask, render_template
+import os
 
-app = Flask(__name__)
+# Define the path to the templates folder inside the 'App' folder
+template_folder = os.path.join(os.getcwd(), 'App', 'templates')
+
+# Initialize the Flask app and specify the custom template folder
+app = Flask(__name__, template_folder=template_folder)
 
 @app.route('/')
 def index():
@@ -16,4 +21,3 @@ def exam():
 
 if __name__ == '__main__':
     app.run(debug=True)
-

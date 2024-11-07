@@ -1,16 +1,23 @@
-# This is a sample Python script.
+from flask import Flask, render_template
+import os
 
-# Press Shift+F10 to execute it or replace it with your code.
-# Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
+# Define the path to the templates folder inside the 'App' folder
+template_folder = os.path.join(os.getcwd(), 'App', 'templates')
 
+# Initialize the Flask app and specify the custom template folder
+app = Flask(__name__, template_folder=template_folder)
 
-def print_hi(name):
-    # Use a breakpoint in the code line below to debug your script.
-    print(f'Hi, {name}')  # Press Ctrl+F8 to toggle the breakpoint.
+@app.route('/')
+def index():
+    return render_template('index.html')
 
+@app.route('/about')
+def about():
+    return render_template('about.html')
 
-# Press the green button in the gutter to run the script.
+@app.route('/exam')
+def exam():
+    return render_template('exam.html')
+
 if __name__ == '__main__':
-    print_hi('PyCharm')
-
-# See PyCharm help at https://www.jetbrains.com/help/pycharm/
+    app.run(debug=True)
