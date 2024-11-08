@@ -3,4 +3,5 @@ git add Procfile
 git commit -m "Add Procfile for deployment"
 git push origin main
 
-web: gunicorn app:app
+web: gunicorn app.app:app
+
